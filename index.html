@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/framework.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login">
+        <h1>Login</h1>
+        <form action="">
+          <label for="user">User Name:</label>
+          <div class="user">
+            <span class="rode"></span>
+            <input type="text" id="user" placeholder="Your User" required />
+            <i style="transition: 0.3s" class="fa-regular fa-user"></i>
+          </div>
+          <label for="pass">Password:</label>
+          <div class="pass">
+            <span class="rode"></span>
+            <input
+              type="password"
+              id="pass"
+              placeholder="Your Password"
+              required
+            />
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <span class="s1">Forget Your Password</span>
+          <div class="btn">
+            <div class="btnbg"></div>
+            <input type="submit" name="submit" value="Login" />
+          </div>
+          <span class="s2">Or Sign Up Using</span>
+        </form>
+        <div class="icons">
+          <i class="fa-brands fa-twitter fa-2x"></i>
+          <i class="fa-brands fa-facebook-f fa-2x"></i>
+          <i class="fa-brands fa-youtube fa-2x"></i>
+        </div>
+      </div>
+    </div>
+    <script>
+      let inputs = Array.from(document.querySelectorAll("input"));
+      let inputss = [inputs[0], inputs[1]];
+
+      inputss.forEach((input) => {
+        input.addEventListener("click", (e) => {
+          e.target.parentElement.querySelector(".rode").style.left = "0";
+        });
+        input.addEventListener("blur", (e) => {
+          e.target.parentElement.querySelector(".rode").style.left = "-100%";
+        });
+      });
+    </script>
+  </body>
+</html>
